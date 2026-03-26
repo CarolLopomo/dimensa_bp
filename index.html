@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Modelo de Atuação TA vs HRBP na Dimensa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dimensa: {
+                            green: '#B9E600',
+                            blue: '#7AD9C5',
+                            neutral: {
+                                900: '#232D28',
+                                700: '#5A695F',
+                                400: '#9BAA98',
+                                50: '#FAFAF5'
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FAFAF5; /* dimensa-neutral-50 */
+            color: #232D28; /* dimensa-neutral-900 */
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-dimensa-neutral-900 text-dimensa-neutral-50 py-16 px-6 sm:px-12 text-center shadow-lg relative border-b-8 border-dimensa-green">
+        <img src="https://dimensa.com/wp-content/uploads/2024/10/Logo-new.png" alt="Dimensa Logo" class="h-12 md:h-16 mx-auto mb-8 object-contain">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Talent Acquisition <span class="text-dimensa-green">vs</span> HRBP</h1>
+        <p class="text-xl text-dimensa-neutral-400 max-w-3xl mx-auto font-light">
+            Entenda as fronteiras, missões e pontos de intersecção entre o Especialista de Mercado e o Consultor Estratégico de Recursos Humanos na Dimensa.
+        </p>
+    </header>
+
+    <main class="container mx-auto px-4 py-12 max-w-7xl">
+
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">1. Propósito e Missão</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Cada papel possui um Core Focus distinto. Enquanto TA olha para o ecossistema externo de talentos, o HRBP atua na maximização do potencial interno.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl shadow-xl border-t-8 border-dimensa-green p-8 transform transition hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">🎯</span>
+                        <h3 class="text-2xl font-bold text-dimensa-neutral-900">Talent Acquisition (TA)</h3>
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-dimensa-green text-dimensa-neutral-900 font-bold px-3 py-1 rounded text-sm uppercase tracking-wide">O Especialista de Mercado</span>
+                    </div>
+                    <p class="text-dimensa-neutral-700 mb-6 leading-relaxed">
+                        Atrair, engajar, avaliar e contratar os melhores talentos disponíveis no mercado, garantindo uma experiência de excelência para o candidato e agilidade processual (SLA) para o negócio.
+                    </p>
+                    <div class="bg-dimensa-neutral-50 p-4 rounded-lg border border-dimensa-green">
+                        <h5 class="font-bold text-dimensa-neutral-900 mb-2">Foco Principal:</h5>
+                        <ul class="list-disc list-inside text-dimensa-neutral-700 space-y-1 font-medium">
+                            <li>Employer Branding</li>
+                            <li>Funil de Recrutamento</li>
+                            <li>Avaliação Técnica/Comportamental</li>
+                            <li>Inteligência de Mercado</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-xl border-t-8 border-dimensa-blue p-8 transform transition hover:-translate-y-2">
+                    <div class="flex items-center mb-4">
+                        <span class="text-4xl mr-4">♟️</span>
+                        <h3 class="text-2xl font-bold text-dimensa-neutral-900">HR Business Partner (HRBP)</h3>
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-dimensa-blue text-dimensa-neutral-900 font-bold px-3 py-1 rounded text-sm uppercase tracking-wide">O Consultor Estratégico</span>
+                    </div>
+                    <p class="text-dimensa-neutral-700 mb-6 leading-relaxed">
+                        Atuar como parceiro estratégico dos líderes de negócio, traduzindo as metas da empresa em estratégias de gestão de pessoas. Foca em maximizar o potencial da força de trabalho existente.
+                    </p>
+                    <div class="bg-dimensa-neutral-50 p-4 rounded-lg border border-dimensa-blue">
+                        <h5 class="font-bold text-dimensa-neutral-900 mb-2">Foco Principal:</h5>
+                        <ul class="list-disc list-inside text-dimensa-neutral-700 space-y-1 font-medium">
+                            <li>Design Organizacional & Planejamento</li>
+                            <li>Gestão de Desempenho</li>
+                            <li>Desenvolvimento de Lideranças</li>
+                            <li>Retenção e Sucessão</li>
+                            <li>Parceira do Negócio e da Liderança</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16 bg-white p-8 rounded-2xl shadow-md border border-dimensa-neutral-400/30">
+            <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">Análise de Foco Competencial</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Visualização gráfica das áreas de maior atuação e domínio de cada papel.</p>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="w-full md:w-1/2">
+                    <div class="chart-container">
+                        <canvas id="radarChart"></canvas>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 space-y-4">
+                    <h3 class="text-xl font-bold text-dimensa-neutral-900 border-b border-dimensa-neutral-400/30 pb-2">Como ler este gráfico?</h3>
+                    <p class="text-dimensa-neutral-700">O gráfico de radar ilustra as áreas onde a energia e o foco estratégico são alocados.</p>
+                    <ul class="space-y-4 mt-4">
+                        <li class="flex items-start bg-dimensa-neutral-50 p-3 rounded border-l-4 border-dimensa-green">
+                            <span class="text-dimensa-neutral-900"><strong>A área Verde Limão (TA)</strong> concentra-se fortemente à esquerda e no topo, evidenciando o foco externo, aquisição de talentos e marca empregadora.</span>
+                        </li>
+                        <li class="flex items-start bg-dimensa-neutral-50 p-3 rounded border-l-4 border-dimensa-blue">
+                            <span class="text-dimensa-neutral-900"><strong>A área Azul/Teal (HRBP)</strong> domina o lado direito e inferior, demonstrando o foco no desenvolvimento interno, retenção e design organizacional de longo prazo.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="bg-white border-l-8 border-dimensa-green p-6 sm:p-8 rounded-r-2xl shadow-lg flex flex-col sm:flex-row items-center gap-6 transform transition hover:scale-[1.01]">
+                <div class="bg-dimensa-green text-dimensa-neutral-900 rounded-full w-16 h-16 flex items-center justify-center shrink-0 shadow-md">
+                    <span class="text-3xl">⚠️</span>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-dimensa-neutral-900 mb-2">Regra de Ouro: Alinhamento com a Liderança</h3>
+                    <p class="text-dimensa-neutral-700 text-lg leading-relaxed">
+                        <strong>TODAS</strong> as interações e alinhamentos de TA com a Liderança devem ser obrigatoriamente <strong>sinalizadas à HRBP</strong>. Além disso, é fundamental <strong>envolvê-las ativamente</strong> nessas discussões para garantir uma atuação estratégica e unificada.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">2. Diferenciação por Ciclo de Vida do Dimenser</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Como as responsabilidades se alternam ao longo da jornada do Dimenser dentro da empresa.</p>
+            </div>
+
+            <div class="relative wrap overflow-hidden p-4 h-full">
+                <div class="border-2-2 absolute border-opacity-50 border-dimensa-neutral-400 h-full border" style="left: 50%"></div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-dimensa-neutral-900 shadow-xl w-12 h-12 rounded-full justify-center">
+                        <h1 class="mx-auto font-bold text-lg text-dimensa-neutral-50">1</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 border-l-4 border-dimensa-blue">
+                        <h3 class="mb-3 font-bold text-dimensa-neutral-900 text-xl">Planejamento</h3>
+                        <p class="text-sm leading-snug tracking-wide text-dimensa-neutral-700">
+                            <strong>HRBP:</strong> Antecipa necessidades, define budget e headcount.<br><br>
+                            <strong>TA:</strong> Traz dados do mercado e calibra expectativas de fechamento.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-dimensa-neutral-900 shadow-xl w-12 h-12 rounded-full justify-center">
+                        <h1 class="mx-auto font-bold text-lg text-dimensa-neutral-50">2</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 border-r-4 border-dimensa-green text-right">
+                        <h3 class="mb-3 font-bold text-dimensa-neutral-900 text-xl">Alinhamento de necessidade de vaga</h3>
+                        <p class="text-sm leading-snug tracking-wide text-dimensa-neutral-700">
+                            <strong>HRBP:</strong> Valida orçamento, equidade salarial. Aprova a vaga. Participa de todos os alinhamentos de vaga, principalmente posições de maior Senioridade.<br><br>
+                            <strong>TA:</strong> Lidera o briefing com o gestor junto com a HRBP e define estratégia de atração.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-dimensa-green shadow-xl w-12 h-12 rounded-full justify-center">
+                        <h1 class="mx-auto font-extrabold text-lg text-dimensa-neutral-900">3</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 border-l-4 border-dimensa-green">
+                        <h3 class="mb-3 font-bold text-dimensa-neutral-900 text-xl">Atração e Entrevistas</h3>
+                        <p class="text-sm leading-snug tracking-wide text-dimensa-neutral-700">
+                            <strong>TA:</strong> Dono absoluto. Faz hunting, entrevistas e shortlist.<br><br>
+                            <strong>HRBP:</strong> Não atua operacionalmente. Acionado apenas para participar e entrevistar de todas as posições de Liderança e Especialistas II, Master e Expert.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-dimensa-neutral-900 shadow-xl w-12 h-12 rounded-full justify-center">
+                        <h1 class="mx-auto font-bold text-lg text-dimensa-neutral-50">4</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 border-r-4 border-dimensa-green text-right">
+                        <h3 class="mb-3 font-bold text-dimensa-neutral-900 text-xl">Oferta e Negociação</h3>
+                        <p class="text-sm leading-snug tracking-wide text-dimensa-neutral-700">
+                            <strong>TA:</strong> Estrutura proposta, negocia benefícios e garante o aceite.<br><br>
+                            <strong>HRBP:</strong> Validador apenas se houver exceções salariais ou em casos de mudança no escopo da posição.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12"></div>
+                    <div class="z-20 flex items-center order-1 bg-dimensa-blue shadow-xl w-12 h-12 rounded-full justify-center">
+                        <h1 class="mx-auto font-extrabold text-lg text-dimensa-neutral-900">5</h1>
+                    </div>
+                    <div class="order-1 bg-white rounded-lg shadow-md w-5/12 px-6 py-4 border-l-4 border-dimensa-blue">
+                        <h3 class="mb-3 font-bold text-dimensa-neutral-900 text-xl">Integração e Desempenho</h3>
+                        <p class="text-sm leading-snug tracking-wide text-dimensa-neutral-700">
+                            <strong>TA:</strong> Finaliza admissão e integração inicial. Encerra sua atuação.<br><br>
+                            <strong>Onboarding:</strong> Comunica a Liderança da posição e a HRBP sobre data de início.<br><br>
+                            <strong>HRBP:</strong> Assume a jornada. Apoia PDI, performance e movimentações.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">3. Matriz RACI</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Mapeamento claro de responsabilidades nos pontos críticos de interface para evitar sombreamento.</p>
+            </div>
+
+            <div class="overflow-x-auto bg-white rounded-xl shadow-md border border-dimensa-neutral-400/30">
+                <table class="min-w-full text-left text-sm whitespace-nowrap">
+                    <thead class="uppercase tracking-wider border-b-2 border-dimensa-neutral-400/30 bg-dimensa-neutral-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 text-dimensa-neutral-900 font-bold">Fase</th>
+                            <th scope="col" class="px-6 py-4 text-dimensa-neutral-900 font-bold">Atividade Específica</th>
+                            <th scope="col" class="px-6 py-4 text-dimensa-neutral-900 font-bold text-center">HRBP</th>
+                            <th scope="col" class="px-6 py-4 text-dimensa-neutral-900 font-bold text-center">TA</th>
+                            <th scope="col" class="px-6 py-4 text-dimensa-neutral-900 font-bold text-center">Gestor</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-dimensa-neutral-400/20">
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Planejamento</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-700">Definição de Headcount e Budget</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Planejamento</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-700">Análise de disponibilidade de mercado</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-400 text-dimensa-neutral-900">I</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Seleção</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-700">Aprovação da requisição sistêmica</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-400 text-dimensa-neutral-900">I</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Seleção</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-700">Alinhamento de Perfil (Briefing)</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors bg-dimensa-neutral-50/50">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Seleção</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-900 font-bold">Condução de Entrevistas e Shortlist</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-400 text-dimensa-neutral-900">I</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-green text-dimensa-neutral-900 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Oferta</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-700">Validação de exceções salariais</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-blue text-dimensa-neutral-900">C</span></td>
+                        </tr>
+                        <tr class="hover:bg-dimensa-neutral-50 transition-colors bg-dimensa-neutral-50/50">
+                            <td class="px-6 py-4 font-semibold text-dimensa-neutral-900">Pós-Seleção</td>
+                            <td class="px-6 py-4 text-dimensa-neutral-900 font-bold">Acompanhamento do período de experiência</td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-400 text-dimensa-neutral-900">I</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-green text-dimensa-neutral-900 shadow-sm">A/R</span></td>
+                            <td class="px-6 py-4 text-center"><span class="px-3 py-1 rounded-full text-xs font-bold bg-dimensa-neutral-900 text-dimensa-neutral-50 shadow-sm">A</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 flex flex-wrap gap-4 text-sm text-dimensa-neutral-700 justify-center">
+                <div class="flex items-center"><span class="w-3 h-3 bg-dimensa-neutral-900 rounded-full mr-2"></span> ou <span class="w-3 h-3 bg-dimensa-green rounded-full mx-2"></span> <strong>A/R</strong>: Executa ou Aprova (Dono)</div>
+                <div class="flex items-center"><span class="w-3 h-3 bg-dimensa-blue rounded-full mr-2"></span> <strong>C</strong>: Consultado</div>
+                <div class="flex items-center"><span class="w-3 h-3 bg-dimensa-neutral-400 rounded-full mr-2"></span> <strong>I</strong>: Informado</div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">4. O Modelo de Hand-off</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">O processo seletivo funciona como uma corrida de revezamento. Entenda as passagens de bastão.</p>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                
+                <div class="bg-white border border-dimensa-neutral-400/30 p-6 rounded-xl shadow-lg w-full md:w-1/3 text-center relative z-10 border-t-4 border-t-dimensa-blue">
+                    <div class="bg-dimensa-blue text-dimensa-neutral-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-sm">1</div>
+                    <h3 class="font-bold text-lg mb-2 text-dimensa-neutral-900">Gatilho Inicial</h3>
+                    <p class="text-sm text-dimensa-neutral-700">HRBP e líder identificam a necessidade. HRBP valida budget e passa o bastão para TA iniciar a busca.</p>
+                </div>
+
+                <div class="text-3xl text-dimensa-neutral-400 rotate-90 md:rotate-0 my-4 md:my-0">➔</div>
+
+                <div class="bg-white border border-dimensa-neutral-400/30 p-6 rounded-xl shadow-lg w-full md:w-1/3 text-center relative z-10 border-t-4 border-t-dimensa-green scale-105">
+                    <div class="bg-dimensa-green text-dimensa-neutral-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-sm">2</div>
+                    <h3 class="font-bold text-lg mb-2 text-dimensa-neutral-900">Execução Especializada</h3>
+                    <p class="text-sm text-dimensa-neutral-700">TA na liderança do processo. HRBP se afasta do microgerenciamento e atua apenas como conselheiro em caso de lentidão.</p>
+                </div>
+
+                <div class="text-3xl text-dimensa-neutral-400 rotate-90 md:rotate-0 my-4 md:my-0">➔</div>
+
+                <div class="bg-white border border-dimensa-neutral-400/30 p-6 rounded-xl shadow-lg w-full md:w-1/3 text-center relative z-10 border-t-4 border-t-dimensa-blue">
+                    <div class="bg-dimensa-blue text-dimensa-neutral-900 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold shadow-sm">3</div>
+                    <h3 class="font-bold text-lg mb-2 text-dimensa-neutral-900">Passagem Final</h3>
+                    <p class="text-sm text-dimensa-neutral-700">Candidato aceita a oferta. TA entrega o 'dossiê' (forças e riscos) ao HRBP para guiar o desenvolvimento futuro do talento.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="mb-16 bg-white p-8 rounded-2xl shadow-md border border-dimensa-neutral-400/30">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">5. Recrutamento Interno (Mobilidade)</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Regras essenciais para a condução de processos seletivos internos com Dimensers.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-dimensa-neutral-50 p-6 rounded-xl border-t-4 border-dimensa-blue transform transition hover:-translate-y-1">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">🔎</span>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">1. Validação Prévia</h3>
+                    </div>
+                    <p class="text-sm text-dimensa-neutral-700 leading-relaxed">As candidaturas de Dimensers devem ser comunicadas <strong>previamente</strong> por TA à HRBP para validação dos critérios de elegibilidade antes de qualquer avanço no processo.</p>
+                </div>
+
+                <div class="bg-dimensa-neutral-50 p-6 rounded-xl border-t-4 border-dimensa-blue transform transition hover:-translate-y-1">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">📢</span>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">2. Visibilidade Contínua</h3>
+                    </div>
+                    <p class="text-sm text-dimensa-neutral-700 leading-relaxed">TA é responsável por manter a HRBP atualizada, comunicando <strong>todos os avanços</strong> e o status do Dimenser ao longo de cada etapa do processo seletivo.</p>
+                </div>
+
+                <div class="bg-dimensa-neutral-50 p-6 rounded-xl border-t-4 border-dimensa-blue transform transition hover:-translate-y-1">
+                    <div class="flex items-center mb-3">
+                        <span class="text-2xl mr-3">🤝</span>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">3. Devolutivas</h3>
+                    </div>
+                    <p class="text-sm text-dimensa-neutral-700 leading-relaxed">A HRBP deve ser <strong>envolvida obrigatoriamente</strong> por TA nos momentos de devolutiva (feedback), tanto com o Dimenser candidato quanto com o Gestor da vaga.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-16">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl font-bold text-dimensa-neutral-900">6. Estrutura de Atendimento das HRBPs</h2>
+                <p class="text-dimensa-neutral-700 mt-2 max-w-2xl mx-auto">Conheça as Business Partners responsáveis por cada Business Unit e Diretoria na Dimensa.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- BP 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-dimensa-blue flex items-center transform transition hover:scale-[1.02]">
+                    <div class="bg-dimensa-neutral-50 text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-4 border border-dimensa-neutral-400/20 shrink-0">👩‍💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">Karen Casatti</h3>
+                        <p class="text-sm text-dimensa-neutral-700 mt-1 leading-snug">BU Investimentos e Diretoria de Tecnologia.</p>
+                    </div>
+                </div>
+
+                <!-- BP 2 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-dimensa-green flex items-center transform transition hover:scale-[1.02]">
+                    <div class="bg-dimensa-neutral-50 text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-4 border border-dimensa-neutral-400/20 shrink-0">👩‍💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">Denise Assumpção</h3>
+                        <p class="text-sm text-dimensa-neutral-700 mt-1 leading-snug">BU Riscos e Digital, Diretoria J.C.P.R.C.I.</p>
+                    </div>
+                </div>
+
+                <!-- BP 3 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-dimensa-blue flex items-center transform transition hover:scale-[1.02]">
+                    <div class="bg-dimensa-neutral-50 text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-4 border border-dimensa-neutral-400/20 shrink-0">👩‍💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">Karina Collaço</h3>
+                        <p class="text-sm text-dimensa-neutral-700 mt-1 leading-snug">BU Seguros</p>
+                    </div>
+                </div>
+
+                <!-- BP 4 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-dimensa-green flex items-center transform transition hover:scale-[1.02]">
+                    <div class="bg-dimensa-neutral-50 text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-4 border border-dimensa-neutral-400/20 shrink-0">👩‍💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">Leide Andrade</h3>
+                        <p class="text-sm text-dimensa-neutral-700 mt-1 leading-snug">BU Core Banking e Diretoria Financeira</p>
+                    </div>
+                </div>
+
+                <!-- BP 5 -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-l-4 border-dimensa-blue flex items-center transform transition hover:scale-[1.02]">
+                    <div class="bg-dimensa-neutral-50 text-2xl rounded-full w-12 h-12 flex items-center justify-center mr-4 border border-dimensa-neutral-400/20 shrink-0">👩‍💼</div>
+                    <div>
+                        <h3 class="font-bold text-lg text-dimensa-neutral-900">Carolina Lopomo</h3>
+                        <p class="text-sm text-dimensa-neutral-700 mt-1 leading-snug">Diretoria de RH e Mkt</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dimensa-neutral-900 text-dimensa-neutral-400 py-8 text-center text-sm border-t border-dimensa-neutral-700">
+        <p>Infográfico gerado com base no Modelo de Atuação Estratégico de RH da Dimensa.</p>
+        <p class="mt-2 text-xs opacity-50">Nota Técnica: Este infográfico foi gerado sem o uso de SVG ou Mermaid JS, utilizando estritamente Canvas e HTML/Tailwind CSS.</p>
+    </footer>
+
+    <script>
+        const wrapText = (text) => {
+            const words = text.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                const word = words[i];
+                if (currentLine.length + word.length + 1 > 16) {
+                    lines.push(currentLine);
+                    currentLine = word;
+                } else {
+                    currentLine += ' ' + word;
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        };
+
+        const rawLabels = [
+            "Atração e Marca Empregadora",
+            "Avaliação Técnica e Comportamental",
+            "Inteligência de Mercado Externo",
+            "Design Organizacional Interno",
+            "Gestão de Desempenho e Metas",
+            "Retenção e Planejamento de Sucessão"
+        ];
+
+        const processedLabels = rawLabels.map(label => wrapText(label));
+
+        const radarCtx = document.getElementById('radarChart').getContext('2d');
+        
+        new Chart(radarCtx, {
+            type: 'radar',
+            data: {
+                labels: processedLabels,
+                datasets: [
+                    {
+                        label: 'Talent Acquisition',
+                        data: [95, 90, 100, 15, 10, 5],
+                        backgroundColor: 'rgba(185, 230, 0, 0.4)', // dimensa-green with opacity
+                        borderColor: '#B9E600', // dimensa-green
+                        pointBackgroundColor: '#B9E600',
+                        pointBorderColor: '#FAFAF5',
+                        pointHoverBackgroundColor: '#FAFAF5',
+                        pointHoverBorderColor: '#B9E600',
+                        borderWidth: 3
+                    },
+                    {
+                        label: 'HRBP',
+                        data: [20, 30, 15, 95, 100, 95],
+                        backgroundColor: 'rgba(122, 217, 197, 0.4)', // dimensa-blue with opacity
+                        borderColor: '#7AD9C5', // dimensa-blue
+                        pointBackgroundColor: '#7AD9C5',
+                        pointBorderColor: '#FAFAF5',
+                        pointHoverBackgroundColor: '#FAFAF5',
+                        pointHoverBorderColor: '#7AD9C5',
+                        borderWidth: 3
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: {
+                            color: 'rgba(35, 45, 40, 0.1)' // dimensa-neutral-900 with low opacity
+                        },
+                        grid: {
+                            color: 'rgba(35, 45, 40, 0.1)'
+                        },
+                        pointLabels: {
+                            font: {
+                                size: 11,
+                                family: "'Inter', sans-serif"
+                            },
+                            color: '#5A695F' // dimensa-neutral-700
+                        },
+                        ticks: {
+                            display: false,
+                            min: 0,
+                            max: 100
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            usePointStyle: true,
+                            padding: 20,
+                            color: '#232D28', // dimensa-neutral-900
+                            font: {
+                                family: "'Inter', sans-serif",
+                                size: 14,
+                                weight: 'bold'
+                            }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
